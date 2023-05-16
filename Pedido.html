@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Convite para sair</title>
+  <style>
+    .container {
+      width: 300px;
+      height: 250px;
+      background-color: #fff;
+      border: 2px solid #000;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+    }
+
+    .question {
+      font-size: 24px;
+      margin-top: 50px;
+    }
+
+    .options {
+      position: absolute;   
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #yes-button {
+      background-color: green;
+    }
+
+    #no-button {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="question">Quer sair comigo?</div>
+    <div class="options">
+      <!-- <button id="yes-button">Sim</button> -->
+      <!-- <button id="no-button">Não</button> -->
+      <button id="yes-button">
+        <a href="resposta.html" style="text-decoration:none; color:inherit;">
+          Sim
+        </a></button>
+      <button id="no-button">Não</button>
+    </div>
+  </div>
+
+  <script>
+    const noButton = document.getElementById("no-button");
+
+    noButton.addEventListener("mousemove", function (event) {
+      let x = Math.floor(Math.random() * 251) - 125;
+      let y = Math.floor(Math.random() * 51) - 25;
+      noButton.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+
+</html>
